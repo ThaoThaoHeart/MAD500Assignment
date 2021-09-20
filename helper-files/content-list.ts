@@ -20,10 +20,21 @@ export class ContentList {
   }
 
   //add function that adds 1 Content to end of array
+  addContent(item: Content){
+    this._items.push(item);
+  }
   //function returns number of items in array
+  numOfItems(){
+    return this._items.length;
+  }
 
   //function that takes input of an index and returns reader-friendly html
   //output of a Content items properties
+  showContentsOfItem(num: number){
+    let item = this._items[num];
+
+  }
+
   increaseCount() {
     return ++ContentList.contentCount;
   }
