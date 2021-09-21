@@ -8,7 +8,7 @@ import {Content} from "../../../helper-files/content-interface";
   styleUrls: ['./content-card.component.css']
 })
 export class ContentCardComponent {
-  contents: ContentList | undefined;
+  contents: ContentList = new ContentList();
 
   ngOnInit(): void {
      let item: Content = {
@@ -18,8 +18,7 @@ export class ContentCardComponent {
       body: "Some kind of info"
     };
 
-    let list: ContentList;
-    list = new ContentList(item);
+    this.contents.add(item);
 
     let item2: Content = {
       id: 2,
@@ -27,7 +26,7 @@ export class ContentCardComponent {
       title: "Their title 2",
       body: "Some more info 2"
     }
-    list.add(item2);
+    this.contents.add(item2);
 
     let item3: Content = {
       id: 3,
@@ -35,9 +34,8 @@ export class ContentCardComponent {
       title: "Their title 3",
       body: "Some more info 3"
     }
-    list.add(item3);
 
-    this.contents = list;
+    this.contents.add(item3);
 
   }
 

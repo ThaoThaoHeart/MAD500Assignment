@@ -26,7 +26,7 @@ export class AppComponent {
     this.processContent(contentItem);
 
     let list: ContentList;
-    list = new ContentList(contentItem);
+    list = new ContentList();
     list.items = [{
       id: 0,
       author: "Another Person",

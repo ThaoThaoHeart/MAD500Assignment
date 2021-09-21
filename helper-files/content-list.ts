@@ -1,14 +1,12 @@
 import {Content} from "./content-interface";
 
 export class ContentList {
-  static contentCount = 0;
   _items: Content[];
 
   //Constructor
-  constructor(item: Content) {
-    this._items = []; // initialize array
-    this._items[0] = item;
-    this.increaseCount();
+
+  constructor() {
+    this._items = [];
   }
 
   //getter function returns Content array
@@ -35,15 +33,23 @@ export class ContentList {
       return "Error, Index unreachable."
     } else {
     let item = this._items[num];
-    return item.id + "\n" +
-      item.author + "\n" +
-      item.body + "\n" +
-      item.title;
+    return "id: " + item.id + "</br>" +
+      "author: " + item.author + "</br>" +
+      "body: " + item.body + "</br>" +
+      "title: " + item.title;
     }
   }
 
-  increaseCount() {
-    return ++ContentList.contentCount;
-  }
+  // showAllContents(){
+  //   for (let i = 0; i < this._items.length; i++){
+  //     let item = this._items[i];
+  //     return "id: " + item.id + "</br>" +
+  //       "author: " + item.author + "</br>" +
+  //       "body: " + item.body + "</br>" +
+  //       "title: " + item.title;
+  //   }
+  // }
+
+
 
 }
