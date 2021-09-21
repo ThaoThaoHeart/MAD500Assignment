@@ -4,7 +4,6 @@ export class ContentList {
   _items: Content[];
 
   //Constructor
-
   constructor() {
     this._items = [];
   }

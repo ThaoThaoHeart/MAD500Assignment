@@ -11,6 +11,7 @@ export class ContentCardComponent {
   contents: ContentList = new ContentList();
 
   ngOnInit(): void {
+
      let item: Content = {
       id: 1,
       author: "Jenny Hoang",
