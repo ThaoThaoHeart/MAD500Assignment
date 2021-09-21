@@ -30,12 +30,16 @@ export class ContentList {
 
   //function that takes input of an index and returns reader-friendly html
   //output of a Content items properties
-  showContentsOfItem(num: number){
+  showContentsOfItem(num: number) {
+    if (num > this.numOfItems()-1) {
+      return "Error, Index unreachable."
+    } else {
     let item = this._items[num];
     return item.id + "\n" +
       item.author + "\n" +
       item.body + "\n" +
       item.title;
+    }
   }
 
   increaseCount() {

@@ -16,11 +16,6 @@ export class AppComponent {
 
   //When Instantiate, structure called.
   public ngOnInit(): void{
-  //   // let name: string;
-  //   // name = "Peter";
-  //
-  //   let name = 'Peter';
-  //   console.log("Name is", name);
     let contentItem: Content = {
       id: 0,
       author: "Person",
@@ -30,7 +25,6 @@ export class AppComponent {
     };
     this.processContent(contentItem);
 
-    // ContentList.contentCount = 1;
     let list: ContentList;
     list = new ContentList(contentItem);
     list.items = [{
@@ -42,6 +36,7 @@ export class AppComponent {
     }]
     console.log("This is the one", list.items);
   };
+
   public processContent(content: Content): void{
     console.log(content.body)
   }
