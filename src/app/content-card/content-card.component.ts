@@ -1,6 +1,6 @@
 import { Component} from '@angular/core';
-import {ContentList} from "../../../helper-files/content-list";
-import {Content} from "../../../helper-files/content-interface";
+import {ContentList} from "../helper-files/content-list";
+import {Content} from "../helper-files/content-interface";
 
 @Component({
   selector: 'app-content-card',
