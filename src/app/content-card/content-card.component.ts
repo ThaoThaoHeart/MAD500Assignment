@@ -1,37 +1,28 @@
-import { Component} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Content} from "../helper-files/content-interface";
+import {ContentListComponent} from "../content-list/content-list.component";
 
 @Component({
   selector: 'app-content-card',
   templateUrl: './content-card.component.html',
   styleUrls: ['./content-card.component.css']
 })
-export class ContentCardComponent {
-  // contents: ContentList = new ContentList();
+export class ContentCardComponent implements OnInit{
+  @Input() content: Content;
 
-  ngOnInit(): void {
-     let item: Content = {
+  constructor() {
+    this.content = {
       id: 1,
       author: "Jenny Hoang",
       title: "My Title",
-      body: "Some kind of info"
+      imgUrl: "",
+      type: "",
+      body: "",
+      tags: []
     };
+  }
 
-
-    let item2: Content = {
-      id: 2,
-      author: "Person 2",
-      title: "Their title 2",
-      body: "Some more info 2"
-    }
-
-    let item3: Content = {
-      id: 3,
-      author: "Person 3",
-      title: "Their title 3",
-      body: "Some more info 3"
-    }
-
+  ngOnInit(): void {
 
   }
 
