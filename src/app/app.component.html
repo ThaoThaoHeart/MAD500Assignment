@@ -474,7 +474,11 @@
     </a>
   </div>
 
-  <app-content-card></app-content-card>
+  <!-- Content Card -->
+  <!--USE ngFor to display the 5 ContentCards by passing Content Array values-->
+
+  <app-content-card *ngFor="let item of contentList; index as i; first as isFirst" [content]="item"></app-content-card>
+
   <!-- Footer -->
   <footer>
       Love Angular?&nbsp;
