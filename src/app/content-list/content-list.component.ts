@@ -8,9 +8,19 @@ import {Content} from "../helper-files/content-interface";
 })
 export class ContentListComponent implements OnInit {
  @Input() contentList: Content[];
+ @Input() content: Content;
 
   constructor() {
     this.contentList = [];
+    this.content = {
+      id: 0,
+      author: "",
+      imgUrl: "",
+      type: "",
+      title: "",
+      body: "",
+      tags: []
+    }
   }
 
   ngOnInit(): void {
