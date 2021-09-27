@@ -1,9 +1,10 @@
+
 <div class="card" xmlns="http://www.w3.org/1999/html">
   <span class="author" *ngIf="content.author">{{content.author}}</span><br>
-  <span class="image" *ngIf="content.imgUrl"><img src="{{content.imgUrl}}" alt=""/></span><br>
+  <span class="image" *ngIf="content.imgUrl"><img src="{{content.imgUrl}}" (click)="showId()" alt=""/></span><br>
   <span class="title" *ngIf="content.title">{{content.title}}</span><br>
   <span class="body" *ngIf="content.body">{{content.body}}</span><br>
   <span class="type" *ngIf="content.type">{{content.type}}</span><br>
-  <span class="tags" *ngIf="content.tags">{{content.tags}}</span><br>
+  <span class="tags" *ngIf="content.tags">{{content.tags}}</span>
 </div>
 

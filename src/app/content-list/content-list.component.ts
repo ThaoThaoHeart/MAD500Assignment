@@ -7,8 +7,8 @@ import {Content} from "../helper-files/content-interface";
   styleUrls: ['./content-list.component.css']
 })
 export class ContentListComponent implements OnInit {
- @Input() contentList: Content[];
- @Input() content: Content;
+  @Input() contentList: Content[];
+  @Input() content: Content;
 
   constructor() {
     this.contentList = [];
@@ -31,7 +31,7 @@ export class ContentListComponent implements OnInit {
       type: "Live",
       title: "A Title",
       body: "The Body",
-      tags: ["Tag1","Tag2"]
+      tags: ["Tag1", "Tag2"]
     },
       {
         id: 1,
@@ -40,7 +40,7 @@ export class ContentListComponent implements OnInit {
         type: "Life",
         title: "A Title 1",
         body: "The Body 1",
-        tags: ["Tag1","Tag2"]
+        tags: ["Tag1", "Tag2"]
       },
       {
         id: 2,
@@ -49,7 +49,7 @@ export class ContentListComponent implements OnInit {
         type: "To",
         title: "A Title 2",
         body: "The Body 2",
-        tags: ["Tag1","Tag2"]
+        tags: ["Tag1", "Tag2"]
       },
       {
         id: 3,
@@ -58,7 +58,7 @@ export class ContentListComponent implements OnInit {
         type: "The",
         title: "A Title 3",
         body: "The Body 3",
-        tags: ["Tag1","Tag2"]
+        tags: ["Tag1", "Tag2"]
       },
       {
         id: 4,
@@ -67,7 +67,7 @@ export class ContentListComponent implements OnInit {
         type: "Fullest",
         title: "A Title 4",
         body: "The Body 4",
-        tags: ["Tag1","Tag2"]
+        tags: ["Tag1", "Tag2"]
       }
     ]
 
