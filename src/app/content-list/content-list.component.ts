@@ -32,7 +32,7 @@ export class ContentListComponent implements OnInit {
       title: "A Title",
       body: "The Body",
       tags: ["Tag1", "Tag2"]
-    },
+      },
       {
         id: 1,
         author: "Person 1",

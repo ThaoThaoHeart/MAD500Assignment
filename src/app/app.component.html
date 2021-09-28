@@ -478,6 +478,14 @@
   <!--USE ngFor to display the 5 ContentCards by passing Content Array values-->
 
 <app-content-list></app-content-list>
+  This is bob <input #bob> <button (click)="triggerAlert()">Click on me</button>
+  <div>
+    {{bob.value}}
+<!-- Just available within html -->
+  </div>
+
+<!--  <input [(ngModel)]="dot">-->
+<!--  <button (click)="triggerAlert()">Now click me</button>-->
 
   <!-- Footer -->
   <footer>

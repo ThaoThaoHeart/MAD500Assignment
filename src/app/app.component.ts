@@ -7,10 +7,10 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'angular';
-  static contentCount = 0;
-
+  public dot: any;
 
 constructor() {
+  this.dot = "Matrix"
 }
 
   //When Instantiate, structure called.
@@ -35,6 +35,12 @@ constructor() {
   // public processContent(content: Content): void{
   //   console.log(content.body)
   // }
+
+  triggerAlert(): void{
+    alert("This is bob");
+    setTimeout(() => console.log("This be Bobby"), 0); //after 0 seconds
+    // console.log("Show dot value", this.dot);
+  }
 
 
 }
