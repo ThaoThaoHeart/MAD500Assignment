@@ -1,4 +1,10 @@
 
-<app-content-card *ngFor="let item of contentList;last as
-isLast" [content]="item" [class.is-last] = "isLast"></app-content-card>
+Enter a Content title: <input #contentName> <button (click)="triggerAlert(contentName.value)">Find</button>
+<div>
+  <!--      Just available within html-->
+  {{contentName.value}}
+</div>
+<app-content-card *ngFor="let item of (contentList | filterPipe: 'Live')" [content]="item" [class.first-tag] = "'first-tag'"></app-content-card>
+
+<app-content-card *ngFor="let item of (contentList | filterPipe: 'Life')" [content]="item" [class.second-tag] = "'second-tag'"></app-content-card>
 

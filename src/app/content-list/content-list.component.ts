@@ -46,7 +46,7 @@ export class ContentListComponent implements OnInit {
         id: 2,
         author: "Person 2",
         imgUrl: "https://images.pexels.com/photos/5417666/pexels-photo-5417666.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
-        type: "To",
+        type: "Live",
         title: "A Title 2",
         body: "The Body 2",
         tags: ["Tag1", "Tag2"]
@@ -55,7 +55,7 @@ export class ContentListComponent implements OnInit {
         id: 3,
         author: "Person 3",
         imgUrl: "https://images.pexels.com/photos/5417666/pexels-photo-5417666.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
-        type: "The",
+        type: "Life",
         title: "A Title 3",
         body: "The Body 3",
         tags: ["Tag1", "Tag2"]
@@ -64,7 +64,7 @@ export class ContentListComponent implements OnInit {
         id: 4,
         author: "Person 4",
         imgUrl: "https://images.pexels.com/photos/5417666/pexels-photo-5417666.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
-        type: "Fullest",
+        type: "Live",
         title: "A Title 4",
         body: "The Body 4",
         tags: ["Tag1", "Tag2"]
@@ -72,5 +72,26 @@ export class ContentListComponent implements OnInit {
     ]
 
   }
+
+  triggerAlert(name: string): void{
+    let nameExists = false;
+    for(let i = 0; i < this.contentList.length; i++) {
+      if (name.toLowerCase() == this.contentList[i].title.toLowerCase()) {
+        nameExists = true;
+      }
+    }
+
+    if(nameExists) {
+      alert("The title: \"" + name + "\" exists!");
+    } else {
+      alert("The title: \"" + name + "\" does not exist.");
+    }
+
+
+      // alert("This is bob");
+      // setTimeout(() => console.log("This be Bobby"), 0); //after 0 seconds
+      // console.log("Show dot value", this.dot);
+    }
+
 
 }

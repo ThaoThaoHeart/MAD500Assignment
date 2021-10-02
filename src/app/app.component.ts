@@ -36,11 +36,7 @@ constructor() {
   //   console.log(content.body)
   // }
 
-  triggerAlert(): void{
-    alert("This is bob");
-    setTimeout(() => console.log("This be Bobby"), 0); //after 0 seconds
-    // console.log("Show dot value", this.dot);
-  }
+
 
 
 }
