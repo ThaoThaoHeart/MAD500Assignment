@@ -1,6 +1,10 @@
 <div class="card" xmlns="http://www.w3.org/1999/html">
   <span class="author" *ngIf="content.author">{{content.author}}</span><br>
-  <span class="image" *ngIf="content.imgUrl"><img src="{{content.imgUrl}}" (click)="showId()" alt=""/></span><br>
+<!--  <span class="image" *ngIf="content.imgUrl"><img src="{{content.imgUrl}}" (click)="showId()" alt=""/></span><br>-->
+  <div [ngSwitch]='content.imgUrl'>
+      <span class="image" *ngSwitchCase='"https://images.pexels.com/photos/5417666/pexels-photo-5417666.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"'><img src="{{content.imgUrl}}" (click)="showId()" alt=""/></span><br>
+      <span class="image" *ngSwitchDefault><img src="https://www.rd.com/wp-content/uploads/2021/03/GettyImages-1133605325-scaled-e1617227898456.jpg" (click)="showId()" alt=""/></span><br>
+  </div>
   <span class="title" *ngIf="content.title" appHoverstyle txtDecorate="underline">{{content.title}}</span><br>
   <span class="body" *ngIf="content.body">{{content.body}}</span><br>
   <span class="type" *ngIf="content.type">{{content.type}}</span><br>
