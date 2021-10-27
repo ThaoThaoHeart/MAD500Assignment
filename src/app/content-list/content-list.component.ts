@@ -7,6 +7,7 @@ import {Content} from "../helper-files/content-interface";
   styleUrls: ['./content-list.component.css']
 })
 export class ContentListComponent implements OnInit {
+
   @Input() contentList: Content[];
   @Input() content: Content;
 

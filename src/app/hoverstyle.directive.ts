@@ -16,11 +16,11 @@ export class HoverstyleDirective implements OnInit {
     // this.elm.nativeElement.style.fontWeight = this.fontWeight;
   }
 
-  @HostListener('mouseover') onHover(){
+  @HostListener('mouseenter') onHover(){
     this.hoverMe(this.txtDecorate, this.fontWeight);
   }
 
-  @HostListener('mouseout') onHoverOff(){
+  @HostListener('mouseleave') onHoverOff(){
     this.hoverMe("","");
   }
 
