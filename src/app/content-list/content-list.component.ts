@@ -7,7 +7,6 @@ import {Content} from "../helper-files/content-interface";
   styleUrls: ['./content-list.component.css']
 })
 export class ContentListComponent implements OnInit {
-
   @Input() contentList: Content[];
   @Input() content: Content;
 
@@ -94,5 +93,11 @@ export class ContentListComponent implements OnInit {
       // console.log("Show dot value", this.dot);
     }
 
+
+    addContentToList(newBandFromChild: Content) {
+      this.contentList.push(newBandFromChild);
+     //clone the array for the pipe to work
+      this.contentList = Object.assign([], this.contentList);
+    }
 
 }

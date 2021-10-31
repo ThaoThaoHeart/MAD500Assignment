@@ -1,1 +1,11 @@
-<p>create-content works!</p>
+
+<div class="createContent" xmlns="http://www.w3.org/1999/html">
+  ID: <input #id> <br>
+  Author: <input #author> <br>
+  Image: <input #imgUrl> <br>
+  Type: <input #type> <br>
+  Title: <input #title> <br>
+  Body: <input #body> <br>
+  Tags: <input #tag> <br>
+  <button (click)="createContent(id.value, author.value, imgUrl.value, type.value, title.value, body.value, tag.value)">Create Content</button>
+</div>
