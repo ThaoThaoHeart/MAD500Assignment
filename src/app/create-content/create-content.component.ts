@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Output, EventEmitter } from "@angular/core";
 import {Content} from "../helper-files/content-interface";
-import {toNumbers} from "@angular/compiler-cli/src/diagnostics/typescript_version";
+
 
 @Component({
   selector: 'app-create-content',
@@ -11,6 +11,7 @@ import {toNumbers} from "@angular/compiler-cli/src/diagnostics/typescript_versio
 export class CreateContentComponent implements OnInit {
   @Output() newContent = new EventEmitter<Content>();
   newContentItem: Content;
+
   constructor() {
     this.newContentItem = {
       id: 0,
@@ -36,10 +37,9 @@ export class CreateContentComponent implements OnInit {
     this.newContentItem.tags?.push(tag);
     this.newContent.emit(this.newContentItem);
 
-
     let ourPromise = new Promise((success, fail) =>{
-      let testPass = true;
-      if (testPass){
+
+      if (this.newContent.closed){
         success("Success was achieved!");
       }
       else{
