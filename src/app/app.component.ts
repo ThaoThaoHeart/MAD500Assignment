@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {Content} from "./helper-files/content-interface";
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,28 +9,14 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'angular';
-  public dot: any;
+  contentList: Content[] = [];
 
 constructor() {
-  this.dot = "Matrix"
 }
 
   //When Instantiate, structure called.
   public ngOnInit(): void{
-
-    // this.processContent(contentItem);
-
-    // let list: ContentList;
-    // list = new ContentList();
-    // list.items = [{
-    //   id: 0,
-    //   author: "Another Person",
-    //   imgUrl: "Something",
-    //   title: "A Title",
-    //   body: "The Body"
-    // }]
-  //   console.log("This is the one", list.items);
-
+    this.contentList = this.contentService.getContent();
 
   };
 
