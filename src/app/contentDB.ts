@@ -1,6 +1,6 @@
 import {Content} from "./helper-files/content-interface";
 
-export let CONTENTLIST: Content[] = [{
+export const CONTENT: Content[] = [{
   id: 0,
   author: "Person",
   imgUrl: "https://images.pexels.com/photos/5417666/pexels-photo-5417666.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",

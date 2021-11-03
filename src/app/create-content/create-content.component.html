@@ -1,12 +1,12 @@
 
 <div class="createContent" xmlns="http://www.w3.org/1999/html">
-  ID: <input #id> <br>
-  Author: <input #author> <br>
-  Image: <input #imgUrl type="file" name="filename" accept="image/gif, image/jpeg, image/png"> <br>
-  Type: <input #type> <br>
-  Title: <input #title> <br>
-  Body: <input #body> <br>
-  Tags: <input #tag> <br>
-  <button (click)="createContent(id.value, author.value, imgUrl.value, type.value, title.value, body.value, tag.value)">Create Content</button>
+  ID: <input [(ngModel)] = "id"> <br>
+  Author: <input [(ngModel)] = "author"> <br>
+  Image: <input [(ngModel)] = "imgUrl" type="file" name="filename" accept="image/gif, image/jpeg, image/png"> <br>
+  Type: <input [(ngModel)] = "type"> <br>
+  Title: <input [(ngModel)] = "title"> <br>
+  Body: <input [(ngModel)] = "body"> <br>
+  Tags: <input [(ngModel)] = "tags"> <br>
+  <button (click)="addContent()">Create Content</button>
 
 </div>

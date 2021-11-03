@@ -9,8 +9,15 @@ import {Content} from "../helper-files/content-interface";
   styleUrls: ['./create-content.component.css']
 })
 export class CreateContentComponent implements OnInit {
-  @Output() newContent = new EventEmitter<Content>();
+  @Output() newContentEvent = new EventEmitter<Content>();
   newContentItem: Content;
+  id: any;
+  author: any;
+  imgUrl: any;
+  type: any;
+  title: any;
+  body:any;
+  tags: any;
 
   constructor() {
     this.newContentItem = {
@@ -27,25 +34,23 @@ export class CreateContentComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  createContent(id: string, author: string, imgUrl: string ,type: string, title: string, body: string, tag: string): void {
-    this.newContentItem.id = parseInt(id);
-    this.newContentItem.author = author
-    this.newContentItem.imgUrl = imgUrl
-    this.newContentItem.type = type
-    this.newContentItem.title = title
-    this.newContentItem.body = body
-    this.newContentItem.tags?.push(tag);
-    this.newContent.emit(this.newContentItem);
-
+  addContent(): void {
     let ourPromise = new Promise((success, fail) =>{
-
-      if (this.newContent.closed){
+      if (this.id && this.author && this.title && this.body){
+        this.newContentEvent.emit({
+          id: this.id,
+          author: this.author,
+          imgUrl: this.imgUrl,
+          type: this.type,
+          title: this.title,
+          body: this.body,
+          tags: this.tags
+        })
         success("Success was achieved!");
-      }
-      else{
+      }else{
         fail("Failure :(");
       }
-    })
+    });
 
     ourPromise.then((message) => {
       console.log(message)

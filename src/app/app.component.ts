@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Content} from "./helper-files/content-interface";
+import {ContentService} from "./services/content.service";
 
 @Component({
   selector: 'app-root',
@@ -7,22 +8,21 @@ import {Content} from "./helper-files/content-interface";
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'angular';
   contentList: Content[] = [];
 
-constructor() {
+constructor(private contentService: ContentService) {
 }
 
   //When Instantiate, structure called.
   public ngOnInit(): void{
-    this.contentList = this.contentService.getContent();
+    this.contentService.getContentObs().subscribe(
+      contentList =>
+        this.contentList = contentList
+    );
 
   };
-
-  // public processContent(content: Content): void{
-  //   console.log(content.body)
-  // }
 
 
 
