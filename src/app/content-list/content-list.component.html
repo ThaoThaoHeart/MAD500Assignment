@@ -1,4 +1,4 @@
-<app-create-content (newContent)="addContentToList($event)" ></app-create-content>
+<app-create-content (newContentEvent)="addContentToList($event)" ></app-create-content>
 
 Enter a Content title: <input #contentName> <button (click)="triggerAlert(contentName.value)">Find</button>
 <div>

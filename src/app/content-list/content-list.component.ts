@@ -88,17 +88,15 @@ export class ContentListComponent implements OnInit {
       alert("The title: \"" + name + "\" does not exist.");
     }
 
-
-      // alert("This is bob");
       // setTimeout(() => console.log("This be Bobby"), 0); //after 0 seconds
-      // console.log("Show dot value", this.dot);
     }
 
 
-    addContentToList(newBandFromChild: Content) {
-      this.contentList.push(newBandFromChild);
-     //clone the array for the pipe to work
-      this.contentList = Object.assign([], this.contentList);
+    addContentToList(newContent: Content) {
+      this.contentList.push(newContent);
+      //clone the array for the pipe to work
+      this.contentList = [...this.contentList];
+      //.contentList = Object.assign([], this.contentList);
     }
 
 }
