@@ -8,6 +8,7 @@ import { FormsModule } from "@angular/forms";
 import { FilterPipePipe } from './filter-pipe.pipe';
 import { HoverstyleDirective } from './hoverstyle.directive';
 import { CreateContentComponent } from './create-content/create-content.component';
+import { MessagesComponent } from './messages/messages.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { CreateContentComponent } from './create-content/create-content.componen
     ContentListComponent,
     FilterPipePipe,
     HoverstyleDirective,
-    CreateContentComponent
+    CreateContentComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,

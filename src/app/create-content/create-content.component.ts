@@ -44,7 +44,7 @@ export class CreateContentComponent implements OnInit {
           type: this.type,
           title: this.title,
           body: this.body,
-          tags: this.tags
+          tags: this.tags.split(",")
         })
         success("Success was achieved!");
       }else{
