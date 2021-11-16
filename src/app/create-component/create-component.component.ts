@@ -41,9 +41,8 @@ export class CreateComponentComponent implements OnInit {
       }
     }
 
-
     this.contentService.addContent(this.newContentItem).subscribe(content => {
-      this.contentList.push(content)
+      this.contentList.push(content) //Wrong Content List???
       this.contentList = [...this.contentList];
       //add message
       this.messageService.add(`Content Added with id=${this.newContentItem.id}`);
