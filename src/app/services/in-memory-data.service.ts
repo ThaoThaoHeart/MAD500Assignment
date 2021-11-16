@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-import {Content} from "./helper-files/content-interface";
+import {Content} from "../helper-files/content-interface";
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,7 @@ export class InMemoryDataService implements InMemoryDbService{
   constructor() { }
 
   createDb() {
-    const content: Content[] = [{
+    const contentList: Content[] = [{
         id: 0,
         author: "Person",
         imgUrl: "https://images.pexels.com/photos/5417666/pexels-photo-5417666.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
@@ -57,7 +57,7 @@ export class InMemoryDataService implements InMemoryDbService{
         }
       ]
 
-    return {content};
+    return {contentList};
   }
 
   genId(content: Content[]): number {

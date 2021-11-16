@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Content} from "../helper-files/content-interface";
-import { CONTENT } from "../helper-files/contentDB";
+//import { CONTENT } from "../helper-files/contentDB";
 import {ContentService} from "../services/content.service";
 import {MessageService} from "../message.service";
 
@@ -32,11 +32,16 @@ export class ContentListComponent implements OnInit {
   // }
 
   selectedContent?: Content;
-  contentList: Content[] = [];
-  constructor(public contentService: ContentService, private messageService: MessageService) { }
+  @Input() contentList: Content[] = [];
+
+  public constructor(public contentService: ContentService, private messageService: MessageService) { }
 
   ngOnInit(): void {
-    this.getContentList();
+    //this.getContentList();
+    this.contentService.getContent().subscribe(
+      contentList => {
+      this.contentList = contentList
+    });
   }
 
   onSelect(content: Content): void {
@@ -44,10 +49,11 @@ export class ContentListComponent implements OnInit {
     this.messageService.add(`ContentComponent: Selected content id=${content.id}`);
   }
 
-  getContentList(): void {
-    this.contentService.getContentObs()
-      .subscribe(contentList => this.contentList = contentList);
-  }
+  // getContentList(): void {
+  //   this.contentService.getContent().subscribe(contentList => {
+  //     this.contentList = contentList
+  //   });
+  // }
 
   triggerAlert(name: string): void{
     let nameExists = false;
@@ -64,14 +70,16 @@ export class ContentListComponent implements OnInit {
     }
 
       // setTimeout(() => console.log("This be Bobby"), 0); //after 0 seconds
+    console.log(this.contentList)
     }
 
 
-    addContentToList(newContent: Content) {
-      this.contentList.push(newContent);
-      //clone the array for the pipe to work
-      this.contentList = [...this.contentList];
-      //.contentList = Object.assign([], this.contentList);
-    }
+    // addContentToList(newContent: Content) {
+    //   this.contentList.push(newContent);
+    //   //clone the array for the pipe to work
+    //   this.contentList = [...this.contentList];
+    //   //.contentList = Object.assign([], this.contentList);
+    // }
+
 
 }

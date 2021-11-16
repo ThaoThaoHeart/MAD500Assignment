@@ -10,17 +10,17 @@ import {ContentService} from "./services/content.service";
 
 export class AppComponent implements OnInit{
   title = 'angular';
-  contentList: Content[] = [];
+  //contentList: Content[] = [];
 
 constructor(private contentService: ContentService) {
 }
 
   //When Instantiate, structure called.
   public ngOnInit(): void{
-    this.contentService.getContentObs().subscribe(
-      contentList =>
-        this.contentList = contentList
-    );
+    // this.contentService.getContent().subscribe(
+    //   contentList =>
+    //     this.contentList = contentList
+    // );
 
   };
 
