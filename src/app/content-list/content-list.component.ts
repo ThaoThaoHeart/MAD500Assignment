@@ -10,50 +10,35 @@ import {MessageService} from "../message.service";
   styleUrls: ['./content-list.component.css']
 })
 export class ContentListComponent implements OnInit {
-  // @Input() contentList: Content[];
-  // @Input() content: Content;
-  //
-  // constructor(private contentService: ContentService) {
-  //   this.contentList = [];
-  //   this.content = {
-  //     id: 0,
-  //     author: "",
-  //     imgUrl: "",
-  //     type: "",
-  //     title: "",
-  //     body: "",
-  //     tags: []
-  //   }
-  // }
-  //
-  // ngOnInit(): void {
-  //   this.contentList = this.contentService.getContent();
-  //
-  // }
-
-  selectedContent?: Content;
   @Input() contentList: Content[] = [];
-
+  @Input() content: any;
   public constructor(public contentService: ContentService, private messageService: MessageService) { }
 
   ngOnInit(): void {
-    //this.getContentList();
-    this.contentService.getContent().subscribe(
-      contentList => {
+    this.getContentList();
+  }
+
+
+  getContentList(): void {
+    this.contentService.getContent().subscribe(contentList => {
       this.contentList = contentList
     });
   }
 
-  onSelect(content: Content): void {
-    this.selectedContent = content;
-    this.messageService.add(`ContentComponent: Selected content id=${content.id}`);
+  //$event
+  addContentToList(newContentItem: Content): void{
+    console.log("got here");
+      this.getContentList()
   }
 
-  // getContentList(): void {
-  //   this.contentService.getContent().subscribe(contentList => {
-  //     this.contentList = contentList
-  //   });
-  // }
+  updateContentToList(updateContentItem: Content): void{
+      this.contentList.forEach(element => {
+        if(element.id === updateContentItem.id){
+          element = updateContentItem;
+        }
+      })
+    this.getContentList()
+  }
 
   triggerAlert(name: string): void{
     let nameExists = false;
@@ -73,13 +58,6 @@ export class ContentListComponent implements OnInit {
     console.log(this.contentList)
     }
 
-
-    // addContentToList(newContent: Content) {
-    //   this.contentList.push(newContent);
-    //   //clone the array for the pipe to work
-    //   this.contentList = [...this.contentList];
-    //   //.contentList = Object.assign([], this.contentList);
-    // }
 
 
 }

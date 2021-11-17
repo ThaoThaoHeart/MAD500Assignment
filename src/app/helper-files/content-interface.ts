@@ -1,7 +1,7 @@
 //Export lets you cherry pick without the whole file
 
 export interface Content{
-  id: number;
+  id?: number;
   author: string;
   imgUrl?: string;
   type?: string;

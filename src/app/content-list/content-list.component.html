@@ -1,5 +1,5 @@
 <!--<app-create-content (newContentEvent)="addContentToList($event)" ></app-create-content>-->
-<app-create-component></app-create-component>
+<app-create-component (newContentEvent)="addContentToList($event)" (updateContentEvent)="updateContentToList($event)" ></app-create-component>
 
 Enter a Content title: <input #contentName> <button (click)="triggerAlert(contentName.value)">Find</button>
 <div>
