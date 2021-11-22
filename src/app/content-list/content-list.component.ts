@@ -1,8 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Inject, Input, OnInit} from '@angular/core';
 import {Content} from "../helper-files/content-interface";
-//import { CONTENT } from "../helper-files/contentDB";
 import {ContentService} from "../services/content.service";
-import {MessageService} from "../message.service";
+import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
+import {CreateComponentComponent} from "../create-component/create-component.component";
 
 @Component({
   selector: 'app-content-list',
@@ -12,10 +12,24 @@ import {MessageService} from "../message.service";
 export class ContentListComponent implements OnInit {
   @Input() contentList: Content[] = [];
   @Input() content: any;
-  public constructor(public contentService: ContentService, private messageService: MessageService) { }
+
+  public constructor(public contentService: ContentService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getContentList();
+  }
+
+  //DIALOG
+  openDialog(): void {
+    const dialogRef = this.dialog.open(CreateComponentComponent, {
+      width: '250px',
+      data: { },
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      //this.animal = result;
+    });
   }
 
 
@@ -27,7 +41,6 @@ export class ContentListComponent implements OnInit {
 
   //$event
   addContentToList(newContentItem: Content): void{
-    console.log("got here");
       this.getContentList()
   }
 

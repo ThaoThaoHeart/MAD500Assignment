@@ -17,6 +17,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatDividerModule} from "@angular/material/divider";
 
 @NgModule({
   declarations: [
@@ -41,8 +43,10 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     BrowserAnimationsModule,
     MatButtonModule,
     MatInputModule,
-    MatSnackBarModule
-],
+    MatSnackBarModule,
+    MatDialogModule,
+    MatDividerModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

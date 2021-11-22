@@ -22,11 +22,17 @@ export class CreateComponentComponent implements OnInit {
   body: any;
   tags: any;
 
-  constructor(public contentService: ContentService, public _snackBar: MatSnackBar) {
+  constructor(public contentService: ContentService, public _snackBar: MatSnackBar
+  ,  public dialogRef: MatDialogRef<CreateComponentComponent>,
+              @Inject(MAT_DIALOG_DATA) public data: Content) {
   }
 
   ngOnInit(): void {
 
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 
   openSnackBarAddedContent() {
