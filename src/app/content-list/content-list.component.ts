@@ -28,9 +28,13 @@ export class ContentListComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      //this.animal = result;
+      this.addContentToList(result);
+      this.updateContentToList(result);
+      console.log('The dialog was closed.');
+
     });
+
+
   }
 
 

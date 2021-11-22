@@ -4,6 +4,7 @@ import {ContentService} from "../services/content.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
 
+
 @Component({
   selector: 'app-create-component',
   templateUrl: './create-component.component.html',
@@ -24,7 +25,7 @@ export class CreateComponentComponent implements OnInit {
 
   constructor(public contentService: ContentService, public _snackBar: MatSnackBar
   ,  public dialogRef: MatDialogRef<CreateComponentComponent>,
-              @Inject(MAT_DIALOG_DATA) public data: Content) {
+              @Inject(MAT_DIALOG_DATA) public data: any) {
   }
 
   ngOnInit(): void {
@@ -32,6 +33,7 @@ export class CreateComponentComponent implements OnInit {
   }
 
   onNoClick(): void {
+
     this.id = '';
     this.author = '';
     this.imgUrl = '';
@@ -40,7 +42,7 @@ export class CreateComponentComponent implements OnInit {
     this.body = '';
     this.tags = [];
 
-    this.dialogRef.close();
+    this.dialogRef.close(this.data);
   }
 
   openSnackBarAddedContent() {
@@ -71,6 +73,8 @@ export class CreateComponentComponent implements OnInit {
         this.newContentEvent.emit(content);
       });
 
+      this.data = this.newContentItem;
+
       this.openSnackBarAddedContent();
       this.onNoClick();
     }
@@ -93,10 +97,14 @@ export class CreateComponentComponent implements OnInit {
         this.updateContentEvent.emit(this.newContentItem);
       });
 
+      this.data = this.newContentItem;
+
       this.openSnackBarUpdatedContent();
       this.onNoClick();
     }
   }
+
+
 }
 
 
