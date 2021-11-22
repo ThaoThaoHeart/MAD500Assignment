@@ -32,6 +32,14 @@ export class CreateComponentComponent implements OnInit {
   }
 
   onNoClick(): void {
+    this.id = '';
+    this.author = '';
+    this.imgUrl = '';
+    this.type = '';
+    this.title = '';
+    this.body = '';
+    this.tags = [];
+
     this.dialogRef.close();
   }
 
@@ -62,6 +70,9 @@ export class CreateComponentComponent implements OnInit {
         //Add to contentList
         this.newContentEvent.emit(content);
       });
+
+      this.openSnackBarAddedContent();
+      this.onNoClick();
     }
   }
 
@@ -81,6 +92,9 @@ export class CreateComponentComponent implements OnInit {
         //Update
         this.updateContentEvent.emit(this.newContentItem);
       });
+
+      this.openSnackBarUpdatedContent();
+      this.onNoClick();
     }
   }
 }

@@ -1,8 +1,9 @@
-div {
+div{
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
+
+
 button{
-  margin: 2%;
+  margin: 1%;
 }

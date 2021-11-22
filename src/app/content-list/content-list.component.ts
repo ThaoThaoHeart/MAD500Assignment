@@ -22,7 +22,8 @@ export class ContentListComponent implements OnInit {
   //DIALOG
   openDialog(): void {
     const dialogRef = this.dialog.open(CreateComponentComponent, {
-      width: '250px',
+      width: '400px',
+      height: '90%',
       data: { },
     });
 
