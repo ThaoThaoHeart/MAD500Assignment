@@ -1,13 +1,11 @@
-<!--<app-create-content (newContentEvent)="addContentToList($event)" ></app-create-content>-->
 <app-create-component (newContentEvent)="addContentToList($event)" (updateContentEvent)="updateContentToList($event)" ></app-create-component>
 
-Enter a Content title: <input #contentName> <button (click)="triggerAlert(contentName.value)">Find</button>
-<div>
-  <!--      Just available within html-->
-  {{contentName.value}}
-</div>
-<!--<app-content-card *ngFor="let item of (contentList | filterPipe: 'Live')" [content]="item" [class.first-tag] = "'first-tag'"></app-content-card>-->
+<mat-form-field>
+  <input matInput placeholder="Content Name" #contentName>
+</mat-form-field>
+<button mat-raised-button color="primary" (click)="triggerAlert(contentName.value)" >Find Content</button>
 
+<!--<app-content-card *ngFor="let item of (contentList | filterPipe: 'Live')" [content]="item" [class.first-tag] = "'first-tag'"></app-content-card>-->
 <!--<app-content-card *ngFor="let item of (contentList | filterPipe: 'Life')" [content]="item" [class.second-tag] = "'second-tag'"></app-content-card>-->
 <app-content-card *ngFor="let item of contentList; index as i; first as isFirst" [content]="item"
                   [class.is-first]="isFirst" class="content-{{i}}"></app-content-card>

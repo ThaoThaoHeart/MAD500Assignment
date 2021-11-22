@@ -1,13 +1,29 @@
-
-<div class="createContent" xmlns="http://www.w3.org/1999/html">
-  ID: <input [(ngModel)] = "id"> <br>
-  Author: <input [(ngModel)] = "author"> <br>
-  Image: <input [(ngModel)] = "imgUrl"> <br>
-  Type: <input [(ngModel)] = "type"> <br>
-  Title: <input [(ngModel)] = "title"> <br>
-  Body: <input [(ngModel)] = "body"> <br>
-  Tags: <input [(ngModel)] = "tags"> <br>
-  <button (click)="addContent()">Create Content</button>
-  <button (click)="updateContent()">Update Content</button>
+<div>
+  <mat-form-field appearance="fill">
+    <mat-label>ID</mat-label>
+    <input matInput [(ngModel)] = "id">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Author</mat-label>
+    <input matInput [(ngModel)] = "author">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Image</mat-label>
+    <input matInput [(ngModel)] = "imgUrl">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Type</mat-label>
+    <input matInput [(ngModel)] = "type">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Body</mat-label>
+    <input matInput [(ngModel)] = "body">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Tags</mat-label>
+    <input matInput [(ngModel)] = "tags">
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="addContent(); openSnackBarAddedContent()">Create Content</button>
+  <button mat-raised-button color="primary" (click)="updateContent(); openSnackBarUpdatedContent()">Update Content</button>
 
 </div>

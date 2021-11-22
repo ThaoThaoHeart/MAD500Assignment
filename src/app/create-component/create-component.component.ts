@@ -1,6 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Content} from "../helper-files/content-interface";
 import {ContentService} from "../services/content.service";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-create-component',
@@ -20,11 +21,21 @@ export class CreateComponentComponent implements OnInit {
   body:any;
   tags: any;
 
-  constructor(public contentService: ContentService) {
+  constructor(public contentService: ContentService, public _snackBar: MatSnackBar) {
   }
 
   ngOnInit(): void {
 
+  }
+
+  openSnackBarAddedContent() {
+    this._snackBar.open("Content Added!", "Ok", {
+      duration: 3000});
+  }
+
+  openSnackBarUpdatedContent() {
+    this._snackBar.open("Content Updated!", "Ok", {
+      duration: 3000});
   }
 
   addContent(): void {
