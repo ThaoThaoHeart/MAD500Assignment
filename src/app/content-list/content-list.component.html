@@ -1,3 +1,4 @@
+<div>
 <app-create-component (newContentEvent)="addContentToList($event)" (updateContentEvent)="updateContentToList($event)" ></app-create-component>
 
 <mat-form-field>
@@ -9,3 +10,4 @@
 <!--<app-content-card *ngFor="let item of (contentList | filterPipe: 'Life')" [content]="item" [class.second-tag] = "'second-tag'"></app-content-card>-->
 <app-content-card *ngFor="let item of contentList; index as i; first as isFirst" [content]="item"
                   [class.is-first]="isFirst" class="content-{{i}}"></app-content-card>
+</div>

@@ -1,7 +1,9 @@
-/*.is-last{*/
-/*  border: 2px solid black;*/
-/*  display: block;*/
-/*}*/
+
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .first-tag{
     border: 2px solid red;
@@ -12,5 +14,7 @@
   border: 2px solid blue;
   display: block;
 }
+
+
 
 

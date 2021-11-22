@@ -1,7 +1,8 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Inject, OnInit, Output} from '@angular/core';
 import {Content} from "../helper-files/content-interface";
 import {ContentService} from "../services/content.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-create-component',
@@ -18,7 +19,7 @@ export class CreateComponentComponent implements OnInit {
   imgUrl: any;
   type: any;
   title: any;
-  body:any;
+  body: any;
   tags: any;
 
   constructor(public contentService: ContentService, public _snackBar: MatSnackBar) {
@@ -30,16 +31,18 @@ export class CreateComponentComponent implements OnInit {
 
   openSnackBarAddedContent() {
     this._snackBar.open("Content Added!", "Ok", {
-      duration: 3000});
+      duration: 3000
+    });
   }
 
   openSnackBarUpdatedContent() {
     this._snackBar.open("Content Updated!", "Ok", {
-      duration: 3000});
+      duration: 3000
+    });
   }
 
   addContent(): void {
-    if ( this.author && this.title && this.body) {
+    if (this.author && this.title && this.body) {
       this.newContentItem = {
         author: this.author,
         imgUrl: this.imgUrl,
@@ -56,6 +59,7 @@ export class CreateComponentComponent implements OnInit {
       });
     }
   }
+
   updateContent(): void {
     if (this.id && this.author && this.title && this.body) {
       this.newContentItem = {
@@ -74,6 +78,6 @@ export class CreateComponentComponent implements OnInit {
       });
     }
   }
-
-
 }
+
+

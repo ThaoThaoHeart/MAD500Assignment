@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Content} from "./helper-files/content-interface";
-import {ContentService} from "./services/content.service";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-root',
@@ -11,7 +10,7 @@ import {ContentService} from "./services/content.service";
 export class AppComponent implements OnInit{
   title = 'Angular';
 
-constructor(private contentService: ContentService) {
+constructor() {
 }
 
   //When Instantiate, structure called.
