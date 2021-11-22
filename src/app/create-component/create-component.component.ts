@@ -57,9 +57,8 @@ export class CreateComponentComponent implements OnInit {
         body: this.body,
         tags: this.tags.split(",")
       }
-      console.log("new content before", this.newContentItem);
+
       this.contentService.addContent(this.newContentItem).subscribe(content => {
-        console.log("new content after", content);
         //Add to contentList
         this.newContentEvent.emit(content);
       });

@@ -1,14 +1,13 @@
 <div class="addContent">
 <!--  Button to show app-create-component -->
   <button mat-raised-button color="primary" (click)="openDialog()">Add Content</button>
-<!--<app-create-component (newContentEvent)="addContentToList($event)" (updateContentEvent)="updateContentToList($event)" ></app-create-component>-->
 </div>
 
 <mat-divider></mat-divider>
 
 <div class="findContent">
   <mat-form-field appearance="outline">
-    <input matInput placeholder="Content Name" #contentName>
+    <input matInput placeholder="Content's Title" #contentName>
   </mat-form-field>
   <button mat-raised-button color="primary" (click)="triggerAlert(contentName.value)" >Find Content</button>
 </div>
