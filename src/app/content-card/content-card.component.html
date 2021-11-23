@@ -1,3 +1,4 @@
+
 <mat-card class="card" xmlns="http://www.w3.org/1999/html">
   <mat-card-title class="author" *ngIf="content.author">{{content.author}}</mat-card-title><br>
   <mat-card-subtitle class="title" *ngIf="content.title">{{content.title}}</mat-card-subtitle><br>
@@ -13,9 +14,14 @@
 <!--  <span class="title" *ngIf="content.title" appHoverstyle txtDecorate="underline">{{content.title}}</span><br>-->
   <span class="body" *ngIf="content.body">{{content.body}}</span><br>
   <span class="type" *ngIf="content.type">{{content.type}}</span><br>
-<!--  <span class="tags" *ngIf="content.tags" appHoverstyle fontWeight="bold">{{content.tags}}</span>-->
 
+<!--  <span class="tags" *ngIf="content.tags" appHoverstyle fontWeight="bold">{{content.tags}}</span>-->
 <!--  <span *ngFor="let item of content.tags" appHoverstyle fontWeight="bold">{{item}}</span>-->
   <span *ngFor="let item of content.tags" >{{item}}</span>
   </mat-card-content>
+
+<!--  <a routerLink="content/{{content.id}}">Content Detail</a>-->
+  <a [routerLink]="['/content',content.id]"
+     routerLinkActive="active">Content Detail</a><br>
+
 </mat-card>

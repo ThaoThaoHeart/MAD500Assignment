@@ -20,6 +20,12 @@ export class ContentService {
     return this.http.get<Content[]>("api/contentList");
   }
 
+  getContentItem(id: number): Observable<Content>{
+    this.messageService.add("Got the Content!");
+    return this.http.get<Content>("api/contentList/" + id);
+  }
+
+
   addContent(content: Content): Observable<Content>{
     this.messageService.add("Content Added!");
     return this.http.post<Content>("api/contentList", content,
