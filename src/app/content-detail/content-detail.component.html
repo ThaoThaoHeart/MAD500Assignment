@@ -20,8 +20,6 @@
     <span *ngFor="let item of content.tags" >{{item}}</span>
   </mat-card-content>
 
-  <!--  <a routerLink="content/{{content.id}}">Content Detail</a>-->
-  <a [routerLink]="['/content',content.id]"
-     routerLinkActive="active">Content Detail</a><br>
+  <a routerLink="/content" routerLinkActive="active">Back to Content List</a><br>
 
 </mat-card>
