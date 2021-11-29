@@ -12,7 +12,7 @@
   <button mat-raised-button color="primary" (click)="triggerAlert(contentName.value)" >Find Content</button>
 </div>
 
-<mat-grid-list cols="3" rowHeight="1:1.1" class="listOfContent">
+<mat-grid-list cols="4" rowHeight="1:1.1" class="listOfContent">
 <!--<app-content-card *ngFor="let item of (contentList | filterPipe: 'Live')" [content]="item" [class.first-tag] = "'first-tag'"></app-content-card>-->
 <!--<app-content-card *ngFor="let item of (contentList | filterPipe: 'Life')" [content]="item" [class.second-tag] = "'second-tag'"></app-content-card>-->
   <mat-grid-tile *ngFor="let item of contentList; index as i;" >

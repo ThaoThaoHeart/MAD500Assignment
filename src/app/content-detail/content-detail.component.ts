@@ -11,7 +11,7 @@ import {ContentService} from "../services/content.service";
 export class ContentDetailComponent implements OnInit {
   id: number = 0;
   content: any = {};
-
+  contentList: Content[] = [];
   constructor( private route: ActivatedRoute, private contentService: ContentService) {
 
   }
@@ -26,6 +26,9 @@ export class ContentDetailComponent implements OnInit {
       c => {this.content = c; console.log(this.content)}
     );
 
+    this.contentService.getContent().subscribe(contentList => {
+      this.contentList = contentList
+    });
   }
 
 }

@@ -1,13 +1,13 @@
 
 <mat-card class="card" xmlns="http://www.w3.org/1999/html">
-  <mat-card-title class="author" *ngIf="content.author">{{content.author}}</mat-card-title><br>
-  <mat-card-subtitle class="title" *ngIf="content.title">{{content.title}}</mat-card-subtitle><br>
+  <mat-card-title class="author" *ngIf="content.author">{{content.author}}</mat-card-title>
+  <mat-card-subtitle class="title" *ngIf="content.title">{{content.title}}</mat-card-subtitle>
 
 
   <!--  <span class="image" *ngIf="content.imgUrl"><img src="{{content.imgUrl}}" (click)="showId()" alt=""/></span><br>-->
   <div [ngSwitch]='content.imgUrl'>
-      <span class="image" *ngSwitchCase='"https://images.pexels.com/photos/5417666/pexels-photo-5417666.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"'><img src="{{content.imgUrl}}" (click)="showId()" alt=""/></span><br>
-      <span class="image" *ngSwitchDefault><img src="https://www.rd.com/wp-content/uploads/2021/03/GettyImages-1133605325-scaled-e1617227898456.jpg" (click)="showId()" alt=""/></span><br>
+      <span class="image" *ngSwitchCase='"https://images.pexels.com/photos/5417666/pexels-photo-5417666.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"'><img src="{{content.imgUrl}}" (click)="showId()" alt=""/></span>
+      <span class="image" *ngSwitchDefault><img src="https://www.rd.com/wp-content/uploads/2021/03/GettyImages-1133605325-scaled-e1617227898456.jpg" (click)="showId()" alt=""/></span>
   </div>
 
   <mat-card-content>
@@ -17,11 +17,12 @@
 
 <!--  <span class="tags" *ngIf="content.tags" appHoverstyle fontWeight="bold">{{content.tags}}</span>-->
 <!--  <span *ngFor="let item of content.tags" appHoverstyle fontWeight="bold">{{item}}</span>-->
-  <span *ngFor="let item of content.tags" >{{item}}</span>
-  </mat-card-content>
+  <span *ngFor="let item of content.tags" >{{item}}</span><br>
 
 <!--  <a routerLink="content/{{content.id}}">Content Detail</a>-->
   <a [routerLink]="['/content',content.id]"
-     routerLinkActive="active">Content Detail</a><br>
+     routerLinkActive="active" href="#top">Content Detail</a>
+
+  </mat-card-content>
 
 </mat-card>
