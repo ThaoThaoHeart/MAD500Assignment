@@ -24,7 +24,7 @@ export class CreateComponentComponent implements OnInit {
   tags: any;
 
   constructor(public contentService: ContentService, public _snackBar: MatSnackBar
-  ,  public dialogRef: MatDialogRef<CreateComponentComponent>,
+  , public dialogRef: MatDialogRef<CreateComponentComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any) {
   }
 

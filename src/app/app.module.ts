@@ -57,6 +57,7 @@ import { RouterModule } from '@angular/router';
     MatCardModule,
     RouterModule.forRoot([
       { path: 'content/:id', component: ContentDetailComponent },
+      { path: 'content', component: ContentListComponent },
       { path: '**', component: NotFoundComponent }
     ])
   ],
