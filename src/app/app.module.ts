@@ -58,6 +58,7 @@ import { RouterModule } from '@angular/router';
     RouterModule.forRoot([
       { path: 'content/:id', component: ContentDetailComponent },
       { path: 'content', component: ContentListComponent },
+      { path: '', component: ContentListComponent },
       { path: '**', component: NotFoundComponent }
     ])
   ],
