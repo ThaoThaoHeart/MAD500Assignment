@@ -47,13 +47,13 @@ export class CreateComponentComponent implements OnInit {
 
   openSnackBarAddedContent() {
     this._snackBar.open("Content Added!", "Ok", {
-      duration: 3000
+      duration: 2000
     });
   }
 
   openSnackBarUpdatedContent() {
     this._snackBar.open("Content Updated!", "Ok", {
-      duration: 3000
+      duration: 2000
     });
   }
 
