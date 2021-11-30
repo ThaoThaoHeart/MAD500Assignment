@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
+import {ContentService} from "./services/content.service";
+import {LogUpdateService} from "./services/log-update.service";
 
 @Component({
   selector: 'app-root',
@@ -10,7 +12,9 @@ import {MatDialog} from "@angular/material/dialog";
 export class AppComponent implements OnInit{
   title = 'Angular';
 
-constructor() {
+constructor(private contentService: ContentService,
+            private logService: LogUpdateService) {
+
 }
 
   //When Instantiate, structure called.
