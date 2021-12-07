@@ -8,7 +8,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 export class LogUpdateService {
 
 
-  constructor(updates: SwUpdate, public updateSnackBar: MatSnackBar, public updatedSnackBar: MatSnackBar) {
+  constructor(updates: SwUpdate, public updateSnackBar: MatSnackBar, private updatedSnackBar: MatSnackBar) {
     let snackBarRef = updateSnackBar.open("An update is available!", "Load Update");
     let updatedSnackBarRef = updatedSnackBar.open("An update has been applied!", "Ok!");
 
@@ -26,6 +26,7 @@ export class LogUpdateService {
       if(event.previous == event.current){
         updatedSnackBarRef._open();
       }
+
     });
 
     snackBarRef.onAction().subscribe(() => {
